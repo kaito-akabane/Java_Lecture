@@ -1,66 +1,70 @@
-import java.awt.*;
+package L231004;
+
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.applet.Applet;
-
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 class MyFrame extends JFrame implements ActionListener {
 
-	private JButton buttonOK;
-	private JCheckBox onion, cheese, tomato;
+    private JButton buttonOK;
+    private JCheckBox onion, cheese, tomato;
 
-	public MyFrame() {
-		setTitle("Ã¼Å©¹Ú½º Å×½ºÆ®");
-		setSize(300, 130);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public MyFrame() {
+        setTitle("ì²´í¬ë°•ìŠ¤ í…ŒìŠ¤íŠ¸");
+        setSize(300, 130);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		JLabel label = new JLabel("ÇÜ¹ö°Å¿¡ ¹«¾ùÀ» Ãß°¡ÇÏ½Ã°Ú½À´Ï±î?");
-		JPanel topPanel = new JPanel();
-		topPanel.add(label);
-		add(topPanel, BorderLayout.NORTH);
+        JLabel label = new JLabel("í–„ë²„ê±°ì— ë¬´ì—‡ì„ ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+        JPanel topPanel = new JPanel();
+        topPanel.add(label);
+        add(topPanel, BorderLayout.NORTH);
 
-		// Ã¼Å© ¹Ú½º »ı¼º ¹× Ãß°¡
-		JPanel panel = new JPanel();
-		onion = new JCheckBox("¾çÆÄ");
-		panel.add(onion);
-		cheese = new JCheckBox("Ä¡Áî");
-		panel.add(cheese);
-		tomato = new JCheckBox("Åä¸¶Åä");
-		panel.add(tomato);
-		add(panel, BorderLayout.CENTER);
+        // ì²´í¬ ë°•ìŠ¤ ìƒì„± ë° ì¶”ê°€
+        JPanel panel = new JPanel();
+        onion = new JCheckBox("ì–‘íŒŒ");
+        panel.add(onion);
+        cheese = new JCheckBox("ì¹˜ì¦ˆ");
+        panel.add(cheese);
+        tomato = new JCheckBox("í† ë§ˆí† ");
+        panel.add(tomato);
+        add(panel, BorderLayout.CENTER);
 
-		// ¹öÆ° »ı¼º ¹× Ãß°¡
-		buttonOK = new JButton("OK");
-		JPanel bottomPanel = new JPanel();
-		bottomPanel.add(buttonOK);
-		add(bottomPanel, BorderLayout.SOUTH);
-		buttonOK.addActionListener(this);
+        // ë²„íŠ¼ ìƒì„± ë° ì¶”ê°€
+        buttonOK = new JButton("OK");
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.add(buttonOK);
+        add(bottomPanel, BorderLayout.SOUTH);
+        buttonOK.addActionListener(this);
 
-		setVisible(true);
-	}
+        setVisible(true);
+    }
 
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == buttonOK) {
-			String msg = "";
-			if (onion.isSelected())
-				msg += "¾çÆÄ\n";
-			if (cheese.isSelected())
-				msg += " Ä¡Áî";
-			if (tomato.isSelected())
-				msg += " Åä¸¶Åä";
-			msg = "¼±ÅÃÇÑ ¿É¼ÇÀº ´ÙÀ½°ú °°½À´Ï´Ù.\n " + msg;
-			System.out.println(msg);
-			onion.setSelected(false);
-			cheese.setSelected(false);
-			tomato.setSelected(false);
-		}
-	}
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == buttonOK) {
+            String msg = "";
+            if (onion.isSelected())
+                msg += "ì–‘íŒŒ\n";
+            if (cheese.isSelected())
+                msg += " ì¹˜ì¦ˆ";
+            if (tomato.isSelected())
+                msg += " í† ë§ˆí† ";
+            msg = "ì„ íƒí•œ ì˜µì…˜ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.\n " + msg;
+            System.out.println(msg);
+            onion.setSelected(false);
+            cheese.setSelected(false);
+            tomato.setSelected(false);
+        }
+    }
 }
 
 public class CheckBoxTest extends JFrame {
-	public static void main(String[] args) {
-		new MyFrame();
-	}
+    public static void main(String[] args) {
+        new MyFrame();
+    }
 
 }

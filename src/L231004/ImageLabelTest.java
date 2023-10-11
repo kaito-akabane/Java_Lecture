@@ -1,7 +1,7 @@
 package L231004;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -35,12 +35,13 @@ public class ImageLabelTest extends JFrame implements ActionListener {
     }
  
     public static void main(String[] args) {
-         new ImageLabelTest();
+        ImageLabelTest t=new ImageLabelTest();
     }
  
     public void actionPerformed(ActionEvent e) {
-          ImageIcon dog = new ImageIcon("dog.gif");
-          label.setIcon(dog);
-          label.setText(null);
+        ImageIcon dog = new ImageIcon("dog.gif");
+
+        label.setIcon(dog);
+        label.setText(null);
     }
 } 
